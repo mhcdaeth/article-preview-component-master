@@ -1,0 +1,379 @@
+:root{
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --Font-size: 13px;
+}
+
+body{
+    background-color: var(--Light-Grayish-Blue);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 95% 5%;
+    grid-template-areas:
+    "main"
+    "footer" 
+    ;
+    place-items: center;
+    font-family: 'Manrope', sans-serif;
+
+
+    h3{
+        color: var(--Very-Dark-Grayish-Blue);
+    }
+    
+        p{
+            color: var(--Desaturated-Dark-Blue);
+        }
+
+    .main{
+        grid-area: main;
+        height: 100%;
+        display: grid;
+        place-items: center;
+
+
+        .card{
+            background-color: white;
+            width: 90%;
+            height: 80%;
+            display: grid;
+            border-radius: 10px;
+            grid-template-columns: 100%;
+            grid-template-rows: 40% 60%;
+            grid-template-areas:
+            "head"
+            "text"
+            
+            ;
+
+            .head{
+                grid-area: head;
+                border-radius: 10px 10px 0 0;
+                width: 100%;
+                overflow: hidden;
+
+                .img{
+                    width: 100%;
+                }
+            }
+
+            .text{
+                grid-area: text;
+                display: grid;
+                width: 100%;
+                grid-template-columns: 100%;
+                grid-template-rows: 70% 30%;
+                place-content: center;
+                overflow: hidden;
+                grid-template-areas: 
+                "info"
+                "avatar"
+                ;
+                place-items: center;
+
+                .info{
+                    grid-area: info;
+                    width: 90%;
+                }
+                  
+                .bottom{
+
+                    grid-area: avatar;
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: 100%;
+                    place-items: center;
+                    border-radius: 0 0 10px 10px;
+
+                    .avatar{
+                        width: 90%;
+                        height: 100%;
+                        display: grid;
+                        grid-template-columns: 85% 15%;
+                        grid-template-rows: 100%;
+                        grid-template-areas: 
+                        "info press"
+                        ;
+                        place-items: center;
+    
+                        .person{
+                            grid-area: info;
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: 30% 70%;
+                            grid-template-areas: 
+                            "img nameAndAge"
+                            ;
+    
+                            .img{
+                                grid-area: img;
+                                padding: 10px;
+    
+                                img{
+                                    width: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+    
+                            .nameAndAge{
+                                grid-area: nameAndAge;
+                                
+                                .name{
+                                    margin-bottom: 5px;
+                                    color: var(--Very-Dark-Grayish-Blue);
+                                    font-weight: bold;
+                                }
+    
+                                .date{
+                                    margin-top: 5px;
+                                }
+                                
+                            }
+                            
+                        }
+    
+                        .active{
+                            grid-area: info;
+                            width: 100%;
+                            height: 100%;
+                            display: none;
+                            align-items: center;
+                            justify-content: center;
+
+                            .left{
+
+                                img{
+                                    margin: 0 10px;
+                                }
+                                p{
+                                    color: var(--Light-Grayish-Blue);
+                                    display: inline-block;
+                                    margin: 0 10px;
+                                }
+                            }
+
+                            
+                        }
+    
+                        .share{
+                            grid-area: press;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 100%;
+    
+                            img{
+                                z-index: 1;
+                            }
+    
+                            .bg{
+                                background-color: var(--Light-Grayish-Blue);
+                                width: 40px;
+                                height: 40px;
+                                position: absolute;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .share-active{
+
+                            grid-area: press;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            height: 100%;
+    
+                            img{
+                                z-index: 1;
+                            }
+    
+                            .bg{
+                                background-color: var(--Grayish-Blue);
+                                width: 40px;
+                                height: 40px;
+                                position: absolute;
+                                border-radius: 50%;
+                            }
+
+                            p{
+                                color: var(--Desaturated-Dark-Blue);
+                            }
+                        }
+
+                          // toggle classes in js 
+                        .deactive {
+                            display: none;
+                        }
+
+                        .flex{
+                            display: flex;
+                         }
+                        
+                    }
+
+                    
+
+                }
+
+               
+
+                .bottom_bg{
+                    background-color: var(--Very-Dark-Grayish-Blue);
+                }
+                
+            }
+        }
+        
+        
+
+
+    }
+
+    .attribution { 
+        grid-area: footer;
+        font-size: 11px; 
+        text-align: center; 
+        
+        a { 
+            color: hsl(228, 45%, 44%); 
+        }
+    }
+
+    @media screen and (min-width: 375px){
+
+        .main{
+            grid-area: main;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            overflow: hidden;
+
+            .card{
+                height: 100%;
+                width: 70%;
+                display: grid;
+                grid-template-columns: 40% 60%;
+                grid-template-rows: 100%;
+                grid-template-areas:
+                "img texts" 
+                ;
+
+                .head{
+                    grid-area: img;
+                    height: 100%;
+                    border-radius: 10px 0 0 10px;
+                    overflow: visible;
+
+                    img{
+                        height: 100%;
+                        border-radius: 10px 0 0 10px;
+
+                    }
+                }
+
+                .text{
+                    grid-area: texts;
+                    display: grid;
+                    grid-template-rows: 70% 30%;
+                    grid-template-columns: 100%;
+                    grid-template-areas:
+                    "toper"
+                    "bottomer" 
+                    ;
+                    overflow: visible;
+
+                    .info{
+                        grid-area: toper;
+                    }
+
+                    .bottom{
+                        grid-area: bottomer;
+                        height: 100%;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 100%;
+                        place-items: center;
+                        border-radius: 0;
+
+                        .avatar{
+
+                            .person{
+                                display: grid;
+                                grid-template-columns: 20% 80%;
+
+                                .img{
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                    overflow: hidden;
+                                    display: grid;
+                                    align-items: center;
+
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+
+                                .nameAndAge{
+                                    display: grid;
+                                    align-items: center;
+                                }
+                            }
+
+                            .active{
+                                display: none;
+                                align-content: center;
+                                background-color: var(--Very-Dark-Grayish-Blue);
+                                border-radius: 10px;
+                                position: relative;
+                                width: 230px;
+                                height: 50px;
+                                bottom: 70%;
+                                left: 60%;
+
+                                // .arrow{
+                                //     width: 20px;
+                                //     height: 20px;
+                                //     background-color: var(--Very-Dark-Grayish-Blue);
+                                //     position: absolute;
+                                //     bottom: -5px;
+                                //     left: 100px;
+                                //     right: 0;
+                                // }
+                            }
+
+                            .flex{
+                                display: grid;
+                            }
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+
+    
+    }
+    .attribution { 
+        grid-area: footer;
+        font-size: 11px; 
+        text-align: center; 
+        
+        a { 
+            color: hsl(228, 45%, 44%); 
+        }
+    }
+    
+}
+
